@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels: environment:qa
+  name: tomcat-demo
+spec:
+  containers:
+    - command: $print env
+      image: tomcat:jre17-temurin-jammy
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+          
