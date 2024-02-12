@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: nginxrs
+  name: nginxrs-demo
   labels:
     app: nginx
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: nginx
@@ -20,3 +20,5 @@ spec:
         image: nginx:1.12-alpine
         ports:
         - containerPort: 80   
+          Protocol: TCP
+          
